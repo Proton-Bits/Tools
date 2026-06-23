@@ -49,27 +49,8 @@ goto menu
 :parte1
 echo Executando a Parte 1...
 @echo off
-set "source=%USERPROFILE%\Desktop\assets"
-set "destination=C:\"
 
-if not exist "%source%" (
-    echo A pasta de origem não existe.
-    pause
-    exit /b
-)
-if not exist "%destination%" (
-    echo O diretório de destino não existe.
-    pause
-    exit /b
-)
 
-xcopy "%source%" "%destination%" /E /I /Y
-
-if %errorlevel% equ 0 (
-    echo Pasta copiada com sucesso para %destination%
-) else (
-    echo Houve um erro ao copiar a pasta.
-)
 sc config DiagTrack start= disabled
 sc config diagnosticshub.standardcollector.service start= disabled
 sc config dmwappushservice start= disabled
